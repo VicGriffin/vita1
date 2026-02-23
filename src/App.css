@@ -1,0 +1,267 @@
+/* VITA App Styles */
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050b0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 170, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 170, 0.5);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 212, 170, 0.3);
+  color: #f2f7f7;
+}
+
+/* Radial gradient for vignette effect */
+.bg-gradient-radial {
+  background: radial-gradient(
+    ellipse at center,
+    var(--tw-gradient-from) 0%,
+    var(--tw-gradient-to) 70%
+  );
+}
+
+/* Ensure pinned sections stack correctly */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Glass card enhancements */
+.glass-card,
+.glass-card-strong {
+  will-change: transform, opacity;
+}
+
+/* Feature chip hover effect */
+.feature-chip {
+  transition: all 0.3s ease;
+}
+
+.feature-chip:hover {
+  background: rgba(0, 212, 170, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Image hover effects in cards */
+.animate-image {
+  transition: transform 0.5s ease;
+}
+
+.animate-image:hover {
+  transform: scale(1.02);
+}
+
+/* Floating animation for screenshots */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse glow for accent elements */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 170, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Mobile responsiveness for glass cards */
+@media (max-width: 1024px) {
+  .glass-card,
+  .glass-card-strong {
+    flex-direction: column;
+    height: auto !important;
+    min-height: 70vh;
+    padding: 1.5rem !important;
+  }
+
+  .glass-card > div:first-child,
+  .glass-card-strong > div:first-child {
+    max-width: 100% !important;
+    order: 1;
+  }
+
+  .glass-card .animate-float,
+  .glass-card-strong .animate-float {
+    order: 0;
+    height: 35vh !important;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 640px) {
+  .glass-card,
+  .glass-card-strong {
+    padding: 1rem !important;
+    min-height: 85vh;
+  }
+
+  .glass-card .animate-float,
+  .glass-card-strong .animate-float {
+    height: 30vh !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 475px) {
+  .glass-card,
+  .glass-card-strong {
+    padding: 0.75rem !important;
+    min-height: 90vh;
+  }
+
+  .glass-card .animate-float,
+  .glass-card-strong .animate-float {
+    height: 25vh !important;
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .text-responsive-xs {
+    font-size: 0.75rem;
+  }
+  .text-responsive-sm {
+    font-size: 0.875rem;
+  }
+  .text-responsive-base {
+    font-size: 1rem;
+  }
+  .text-responsive-lg {
+    font-size: 1.125rem;
+  }
+  .text-responsive-xl {
+    font-size: 1.25rem;
+  }
+  .text-responsive-2xl {
+    font-size: 1.5rem;
+  }
+  .text-responsive-3xl {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .text-responsive-xs {
+    font-size: 0.875rem;
+  }
+  .text-responsive-sm {
+    font-size: 1rem;
+  }
+  .text-responsive-base {
+    font-size: 1.125rem;
+  }
+  .text-responsive-lg {
+    font-size: 1.25rem;
+  }
+  .text-responsive-xl {
+    font-size: 1.5rem;
+  }
+  .text-responsive-2xl {
+    font-size: 1.875rem;
+  }
+  .text-responsive-3xl {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .text-responsive-xs {
+    font-size: 1rem;
+  }
+  .text-responsive-sm {
+    font-size: 1.125rem;
+  }
+  .text-responsive-base {
+    font-size: 1.25rem;
+  }
+  .text-responsive-lg {
+    font-size: 1.5rem;
+  }
+  .text-responsive-xl {
+    font-size: 1.875rem;
+  }
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+  }
+  .text-responsive-3xl {
+    font-size: 3rem;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .feature-chip {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Improved mobile scrolling */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .section-pinned {
+    scroll-snap-align: start;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float {
+    animation: none;
+  }
+}
