@@ -6,7 +6,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Production builds
-# dist/ - Commented out to allow deployment
 build/
 *.tgz
 *.tar.gz
