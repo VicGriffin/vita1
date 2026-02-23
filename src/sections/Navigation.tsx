@@ -25,9 +25,9 @@ const Navigation = () => {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 backdrop-blur-xl ${
           isScrolled 
-            ? 'bg-vita-bg/80 backdrop-blur-xl border-b border-white/5' 
+            ? 'bg-vita-bg/90 backdrop-blur-2xl border-b border-white/10 shadow-lg' 
             : 'bg-transparent'
         }`}
       >
@@ -36,7 +36,7 @@ const Navigation = () => {
             {/* Logo */}
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="font-heading text-xl sm:text-2xl font-bold text-vita-text hover:text-vita-accent transition-colors"
+              className="font-heading text-xl sm:text-2xl font-bold text-vita-text hover:text-vita-accent transition-all duration-300 hover:scale-105"
             >
               VITA
             </button>
@@ -45,19 +45,19 @@ const Navigation = () => {
             <div className="hidden lg:flex items-center gap-8">
               <button 
                 onClick={() => scrollToSection('rural-section')}
-                className="text-sm text-vita-text-muted hover:text-vita-text transition-colors"
+                className="text-sm text-vita-text-muted hover:text-vita-text transition-all duration-300 hover:text-vita-accent hover:scale-105"
               >
                 Features
               </button>
               <button 
                 onClick={() => scrollToSection('how-it-works')}
-                className="text-sm text-vita-text-muted hover:text-vita-text transition-colors"
+                className="text-sm text-vita-text-muted hover:text-vita-text transition-all duration-300 hover:text-vita-accent hover:scale-105"
               >
                 How it works
               </button>
               <button 
                 onClick={() => scrollToSection('download')}
-                className="px-5 py-2.5 bg-vita-accent text-vita-bg text-sm font-semibold rounded-full hover:bg-vita-accent/90 transition-colors"
+                className="px-5 py-2.5 bg-vita-accent text-vita-bg text-sm font-semibold rounded-full hover:bg-vita-accent/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-vita-accent/25"
               >
                 Download
               </button>
@@ -66,7 +66,7 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-vita-text hover:bg-white/10 rounded-lg transition-colors"
+              className="lg:hidden p-2 text-vita-text hover:bg-white/10 rounded-lg transition-all duration-300 hover:scale-110"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -83,19 +83,19 @@ const Navigation = () => {
         <div className="flex flex-col items-center justify-center h-full gap-6 sm:gap-8 p-6">
           <button 
             onClick={() => scrollToSection('rural-section')}
-            className="text-xl sm:text-2xl font-heading text-vita-text hover:text-vita-accent transition-colors"
+            className="text-xl sm:text-2xl font-heading text-vita-text hover:text-vita-accent transition-all duration-300 hover:scale-110"
           >
             Features
           </button>
           <button 
             onClick={() => scrollToSection('how-it-works')}
-            className="text-xl sm:text-2xl font-heading text-vita-text hover:text-vita-accent transition-colors"
+            className="text-xl sm:text-2xl font-heading text-vita-text hover:text-vita-accent transition-all duration-300 hover:scale-110"
           >
             How it works
           </button>
           <button 
             onClick={() => scrollToSection('download')}
-            className="w-full max-w-xs px-6 py-3 bg-vita-accent text-vita-bg text-base sm:text-lg font-semibold rounded-full hover:bg-vita-accent/90 transition-colors"
+            className="w-full max-w-xs px-6 py-3 bg-vita-accent text-vita-bg text-base sm:text-lg font-semibold rounded-full hover:bg-vita-accent/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-vita-accent/25"
           >
             Download
           </button>

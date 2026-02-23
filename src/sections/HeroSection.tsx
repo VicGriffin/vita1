@@ -165,12 +165,14 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
       <div ref={bgRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0 }}>
         <img src="/hero_hands_phone.jpg" alt="Emergency response" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-vita-bg/60 via-vita-bg/40 to-vita-bg/80" />
+        {/* Modern overlay effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-vita-accent/10 to-transparent" />
       </div>
 
-      <div ref={cardRef} className="absolute left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 w-[min(90vw,1200px)] h-[min(80vh,600px)] lg:h-[min(65vh,600px)] glass-card flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 lg:p-10" style={{ opacity: 0 }}>
+      <div ref={cardRef} className="absolute left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 w-[min(90vw,1200px)] h-[min(80vh,600px)] lg:h-[min(65vh,600px)] glass-card flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 lg:p-10 backdrop-blur-2xl border border-white/10" style={{ opacity: 0 }}>
         <div className="flex flex-col justify-center h-full w-full lg:w-auto lg:max-w-[48%] lg:max-w-[44%] text-center lg:text-left">
           <div className="mb-2">
-            <span className="mono-label text-vita-accent">One-Tap Emergency - Built for Africa</span>
+            <span className="mono-label text-vita-accent bg-vita-accent/10 px-3 py-1 rounded-full text-xs sm:text-sm font-medium">One-Tap Emergency - Built for Africa</span>
           </div>
           
           <h1 ref={titleRef} className="font-heading text-[clamp(20px,4vw,32px)] sm:text-[clamp(24px,3.2vw,48px)] font-bold text-vita-text leading-tight mb-4">
@@ -198,7 +200,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           
           <div ref={ctaRef} className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4" style={{ opacity: 0 }}>
             {!sosActive ? (
-              <button onClick={activateSOS} className="w-full sm:w-auto px-5 py-2.5 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition-all hover:scale-105 flex items-center justify-center gap-2 animate-pulse-glow">
+              <button onClick={activateSOS} className="w-full sm:w-auto px-6 py-3 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition-all hover:scale-105 flex items-center justify-center gap-2 animate-pulse-glow shadow-lg hover:shadow-red-500/25">
                 <AlertCircle size={18} />
                 Try SOS Demo
               </button>
@@ -228,9 +230,11 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           </div>
         </div>
 
-        <div ref={screenshotRef} className="relative h-[40vh] sm:h-[50vh] lg:h-[85%] w-full lg:w-auto aspect-[9/19] lg:aspect-auto rounded-2xl overflow-hidden shadow-2xl animate-float mt-6 lg:mt-0" style={{ opacity: 0 }}>
+        <div ref={screenshotRef} className="relative h-[40vh] sm:h-[50vh] lg:h-[85%] w-full lg:w-auto aspect-[9/19] lg:aspect-auto rounded-3xl overflow-hidden shadow-2xl animate-float mt-6 lg:mt-0 border border-white/20" style={{ opacity: 0 }}>
           <img src="/ui_mock_sos.jpg" alt="VITA SOS Emergency Interface" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-vita-bg/30 to-transparent" />
+          {/* Modern phone frame effect */}
+          <div className="absolute inset-0 border-2 border-white/20 rounded-3xl pointer-events-none" />
         </div>
       </div>
     </section>
